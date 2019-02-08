@@ -10,15 +10,10 @@ public class test {
         Rectangle r = new Rectangle(4,5);
         System.out.println("Площадь прямоугольника со сторонами " + r.a + " и " + r.b + " = " + area(r));
 
-        Point obj1 = new Point(5,4);
-        Point obj2 = new Point(6,10);
-        System.out.println("Distance: " + "A(" + obj1.x + ":" + obj1.y + ") B(" + obj2.x + ":" + obj2.y + ")" + "=" + point(obj1, obj2));
-    }
-
-    public static double point(Point obj1, Point obj2){
-        //Math.sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
-        double distance = Math.sqrt((obj2.x-obj1.x)*(obj2.x-obj1.x)+(obj2.y-obj1.y)*(obj2.y-obj1.y));
-        return distance;
+        Point obj = new Point();
+        double pointResult = obj.getDistance(5.0,2.2,7.0,3.0);
+        System.out.println("Distance between points:" + pointResult);
+        //System.out.println("Distance: " + "A(" + obj1.x + ":" + obj1.y + ") B(" + obj2.x + ":" + obj2.y + ")" + "=" + point(obj1, obj2));
     }
 
     public static  double area(Square s){
