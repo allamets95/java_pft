@@ -10,25 +10,84 @@ public class Distance {
 
     public static void main(String[] args) throws IOException {
 
-        BufferedReader inp = new BufferedReader(new InputStreamReader(System.in));
 
-        System.out.println("Введите координаты перовй точки в двумерной плоскости (x,y):");
-        int p1x = Integer.parseInt(inp.readLine());
-        int p1y = Integer.parseInt(inp.readLine());
-    
+        int p1x = 10;
+        int p1y = 20;
         Point p1 = new Point(p1x, p1y);
-
-        System.out.println("Введите координаты второй точки в двумерной плоскости (x,y):");
-        int p2x = Integer.parseInt(inp.readLine());
-        int p2y = Integer.parseInt(inp.readLine());
+        int p2x = 2;
+        int p2y = 78;
         Point p2 = new Point(p2x, p2y);
 
-        Point l = new Point(p1, p2);
+        Point L = new Point(p1, p2);
+        System.out.println("---------Пример----------");
+        System.out.println("Расстояние между точками P1("+p1x+","+p1y+"), P2("+p2x+","+p2y+"): "+ L.distance(p1, p2));
 
-        System.out.println(l.distance(p1, p2));
+        p1x = 0;
+        p1y = -20;
+        p1 = new Point(p1x, p1y);
+        p2x = 25;
+        p2y = -7;
+        p2 = new Point(p2x, p2y);
 
+        L = new Point(p1, p2);
+        System.out.println("---------Пример----------");
+        System.out.println("Расстояние между точками P1("+p1x+","+p1y+"), P2("+p2x+","+p2y+"): "+ L.distance(p1, p2));
+
+        p1x = 0;
+        p1y = -20;
+        p1 = new Point(p1x, p1y);
+        p2x = 25;
+        p2y = -7;
+        p2 = new Point(p2x, p2y);
+
+        L = new Point(p1, p2);
+        System.out.println("---------Пример----------");
+        System.out.println("Расстояние между точками P1("+p1x+","+p1y+"), P2("+p2x+","+p2y+"): "+ L.distance(p1, p2));
+
+        p1x = -10;
+        p1y = -20;
+        p1 = new Point(p1x, p1y);
+        p2x = -55;
+        p2y = -7;
+        p2 = new Point(p2x, p2y);
+
+        L = new Point(p1, p2);
+        System.out.println("---------Пример----------");
+        System.out.println("Расстояние между точками P1("+p1x+","+p1y+"), P2("+p2x+","+p2y+"): "+ L.distance(p1, p2));
+
+        p1x = 0;
+        p1y = 0;
+        p1 = new Point(p1x, p1y);
+        p2x = 0;
+        p2y = 0;
+        p2 = new Point(p2x, p2y);
+
+        L = new Point(p1, p2);
+        System.out.println("---------Пример----------");
+        System.out.println("Расстояние между точками P1("+p1x+","+p1y+"), P2("+p2x+","+p2y+"): "+ L.distance(p1, p2));
+
+        p1x = 10;
+        p1y = 20;
+        p1 = new Point(p1x, p1y);
+        p2x = 0;
+        p2y = 0;
+        p2 = new Point(p2x, p2y);
+
+        L = new Point(p1, p2);
+        System.out.println("---------Пример----------");
+        System.out.println("Расстояние между точками P1("+p1x+","+p1y+"), P2("+p2x+","+p2y+"): "+ L.distance(p1, p2));
+
+        p1x = 0;
+        p1y = 0;
+        p1 = new Point(p1x, p1y);
+        p2x = 10;
+        p2y = 20;
+        p2 = new Point(p2x, p2y);
+
+        L = new Point(p1, p2);
+        System.out.println("---------Пример----------");
+        System.out.println("Расстояние между точками P1("+p1x+","+p1y+"), P2("+p2x+","+p2y+"): "+ L.distance(p1, p2));
     }
-
 
 
 }
