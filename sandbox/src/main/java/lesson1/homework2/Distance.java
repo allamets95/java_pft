@@ -20,7 +20,6 @@ public class Distance {
 
 
         System.out.println("---------Пример---------");
-
         System.out.println("Расстояние между точками P1("+p1x+","+p1y+"), P2("+p2x+","+p2y+"): "+ p1.distance(p1, p2));
 
         p1x = 0;

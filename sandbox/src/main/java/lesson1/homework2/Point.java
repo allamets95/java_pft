@@ -11,9 +11,6 @@ public class Point {
 
     }
 
-    public Point(Point p1, Point p2) {
-        distance(p1, p2);
-    }
 
     public double distance(Point p1, Point p2) {
 
