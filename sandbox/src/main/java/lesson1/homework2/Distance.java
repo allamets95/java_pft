@@ -20,7 +20,7 @@ public class Distance {
 
 
         System.out.println("---------Пример---------");
-        System.out.println("Расстояние между точками P1("+p1x+","+p1y+"), P2("+p2x+","+p2y+"): "+ p1.distance(p1, p2));
+        System.out.println("Расстояние между точками P1("+p1x+","+p1y+"), P2("+p2x+","+p2y+"): "+ p1.distance(p2));
 
         p1x = 0;
         p1y = -20;
@@ -31,7 +31,7 @@ public class Distance {
 
 
         System.out.println("---------Пример----------");
-        System.out.println("Расстояние между точками P1("+p1x+","+p1y+"), P2("+p2x+","+p2y+"): "+ p1.distance(p1, p2));
+        System.out.println("Расстояние между точками P1("+p1x+","+p1y+"), P2("+p2x+","+p2y+"): "+ p1.distance(p2));
 
         p1x = 0;
         p1y = -20;
@@ -42,7 +42,7 @@ public class Distance {
 
 
         System.out.println("---------Пример----------");
-        System.out.println("Расстояние между точками P1("+p1x+","+p1y+"), P2("+p2x+","+p2y+"): "+ p1.distance(p1, p2));
+        System.out.println("Расстояние между точками P1("+p1x+","+p1y+"), P2("+p2x+","+p2y+"): "+p1.distance(p2));
 
         p1x = -10;
         p1y = -20;
@@ -53,7 +53,7 @@ public class Distance {
 
 
         System.out.println("---------Пример----------");
-        System.out.println("Расстояние между точками P1("+p1x+","+p1y+"), P2("+p2x+","+p2y+"): "+ p1.distance(p1, p2));
+        System.out.println("Расстояние между точками P1("+p1x+","+p1y+"), P2("+p2x+","+p2y+"): "+ p1.distance(p2));
 
         p1x = 0;
         p1y = 0;
@@ -64,7 +64,7 @@ public class Distance {
 
 
         System.out.println("---------Пример----------");
-        System.out.println("Расстояние между точками P1("+p1x+","+p1y+"), P2("+p2x+","+p2y+"): "+ p1.distance(p1, p2));
+        System.out.println("Расстояние между точками P1("+p1x+","+p1y+"), P2("+p2x+","+p2y+"): "+ p1.distance(p2));
 
         p1x = 10;
         p1y = 20;
@@ -75,7 +75,7 @@ public class Distance {
 
 
         System.out.println("---------Пример----------");
-        System.out.println("Расстояние между точками P1("+p1x+","+p1y+"), P2("+p2x+","+p2y+"): "+ p1.distance(p1, p2));
+        System.out.println("Расстояние между точками P1("+p1x+","+p1y+"), P2("+p2x+","+p2y+"): "+ p1.distance(p2));
 
         p1x = 0;
         p1y = 0;
@@ -86,7 +86,7 @@ public class Distance {
 
 
         System.out.println("---------Пример----------");
-        System.out.println("Расстояние между точками P1("+p1x+","+p1y+"), P2("+p2x+","+p2y+"): "+ p1.distance(p1, p2));
+        System.out.println("Расстояние между точками P1("+p1x+","+p1y+"), P2("+p2x+","+p2y+"): "+ p1.distance(p2));
 
 
       }
