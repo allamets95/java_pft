@@ -3,26 +3,24 @@ package lessons.tests.addressbook;
 import java.util.concurrent.TimeUnit;
 
 import org.testng.annotations.*;
+
 import org.openqa.selenium.*;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class GroupCreationTests {
     private WebDriver wd;
 
-
     @BeforeMethod(alwaysRun = true)
     public void setUp() throws Exception {
-        wd = new FirefoxDriver();
+        wd = new ChromeDriver();
         wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        wd.get("http://localhost/addressbook/");
-        Login("admin", "secret");
+        login("admin", "secret");
     }
 
-    private void Login(String username, String password) {
-        wd.findElement(By.name("user")).click();
+    private void login(String username, String password) {
+        wd.get("http://localhost/addressbook/");
         wd.findElement(By.name("user")).clear();
         wd.findElement(By.name("user")).sendKeys(username);
-        wd.findElement(By.id("LoginForm")).click();
         wd.findElement(By.name("pass")).click();
         wd.findElement(By.name("pass")).clear();
         wd.findElement(By.name("pass")).sendKeys(password);
@@ -34,9 +32,14 @@ public class GroupCreationTests {
 
         gotoGroupPage();
         initGroupCreation();
-        fillGroupForm(new GroupData("test1", "test2", "test3"));
+        fillGroupForm(new GroupData("test", "test1", "test2"));
         submitGroupCreation();
         returnToGroupPage();
+        logout();
+    }
+
+    private void logout() {
+        wd.findElement(By.linkText("Logout")).click();
     }
 
     private void returnToGroupPage() {
@@ -57,7 +60,6 @@ public class GroupCreationTests {
         wd.findElement(By.name("group_footer")).click();
         wd.findElement(By.name("group_footer")).clear();
         wd.findElement(By.name("group_footer")).sendKeys(groupData.getFooter());
-        wd.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Groups'])[1]/following::form[1]")).click();
     }
 
     private void initGroupCreation() {
@@ -73,16 +75,7 @@ public class GroupCreationTests {
         wd.quit();
     }
 
-    private boolean isElementPresent(By by) {
-        try {
-            wd.findElement(by);
-            return true;
-        } catch (NoSuchElementException e) {
-            return false;
-        }
-    }
-
-    private boolean isAlertPresent() {
+    private boolean isAlertPresent(ChromeDriver wd) {
         try {
             wd.switchTo().alert();
             return true;
@@ -90,5 +83,4 @@ public class GroupCreationTests {
             return false;
         }
     }
-
 }
