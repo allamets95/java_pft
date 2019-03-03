@@ -1,5 +1,5 @@
-package lessons.tests.addressbook;
-//homework4
+package lessons.tests.addressbook.model;
+
 
 public class GroupData {
     private final String name;

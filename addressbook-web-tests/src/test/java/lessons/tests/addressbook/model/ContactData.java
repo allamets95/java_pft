@@ -1,5 +1,5 @@
-package lessons.tests.addressbook;
-//homework4
+package lessons.tests.addressbook.model;
+
 public class ContactData {
     private final String firstname;
     private final String lastname;
