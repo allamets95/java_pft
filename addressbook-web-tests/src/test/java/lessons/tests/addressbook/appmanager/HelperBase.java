@@ -2,6 +2,7 @@ package lessons.tests.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class HelperBase {
@@ -20,6 +21,15 @@ public class HelperBase {
         wd.findElement(locator).clear();
         wd.findElement(locator).sendKeys(text);
     }
+
+    private boolean isElementPresent(By by) {
+        try {
+            wd.findElement(by);
+            return true;
+        } catch (NoSuchElementException e) {
+            return false;
+        }
+    }
     public boolean isAlertPresent() {
         try {
             wd.switchTo().alert();
@@ -27,5 +37,8 @@ public class HelperBase {
         } catch (NoAlertPresentException e) {
             return false;
         }
+    }
+    public void acceptAlert() {
+        wd.switchTo().alert().accept();
     }
 }
