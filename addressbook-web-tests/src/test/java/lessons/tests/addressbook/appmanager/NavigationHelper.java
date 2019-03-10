@@ -1,12 +1,14 @@
 package lessons.tests.addressbook.appmanager;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class NavigationHelper extends HelperBase {
-    public ChromeDriver wd;
 
-    public NavigationHelper(ChromeDriver wd) {
+public class NavigationHelper extends HelperBase {
+
+
+    public NavigationHelper(WebDriver wd) {
 
         super(wd);
     }

@@ -3,12 +3,13 @@ package lessons.tests.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebDriver;
+
 
 public class HelperBase {
-    protected ChromeDriver wd;
+    protected WebDriver wd;
 
-    public HelperBase(ChromeDriver wd) {
+    public HelperBase(WebDriver wd) {
         this.wd = wd;
     }
 

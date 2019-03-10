@@ -2,11 +2,12 @@ package lessons.tests.addressbook.appmanager;
 
 import lessons.tests.addressbook.model.ContactData;
 import org.openqa.selenium.By;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebDriver;
+
 
 public class ContactHelper extends HelperBase  {
 
-    public ContactHelper(ChromeDriver wd) {
+    public ContactHelper(WebDriver wd) {
 
         super(wd);
     }
