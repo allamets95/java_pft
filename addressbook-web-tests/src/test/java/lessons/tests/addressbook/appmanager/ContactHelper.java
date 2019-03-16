@@ -18,7 +18,7 @@ public class ContactHelper extends HelperBase  {
       click(By.xpath("//*[@id=\"content\"]/form/input[1]"));
     }
 
-    public void fillContactForm(ContactData contactData, boolean creation) {
+    public void fillContactForm(ContactData contactData) {
         type(By.name("firstname"), contactData.getFirstname());
         type(By.name("lastname"), contactData.getLastname());
         type(By.name("company"), contactData.getCompany());
@@ -27,11 +27,6 @@ public class ContactHelper extends HelperBase  {
         type(By.name("work"), contactData.getWork());
         type(By.name("email"), contactData.getEmail());
 
-        if (creation){
-            new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
-        } else {
-            Assert.assertFalse(isElementPresent(By.name("new_group")));
-        }
     }
 
     public void editContactModification() {
@@ -53,5 +48,24 @@ public class ContactHelper extends HelperBase  {
     public void confirmDeletion() {
 
         acceptAlert();
+    }
+
+    public void createContact(ContactData contactData) {
+        gotoAddContact();
+        fillContactForm(contactData);
+        enterContactCreation();
+        returnToHomePage();
+    }
+
+    private void returnToHomePage() {
+        click(By.linkText("home page"));
+    }
+
+    private void gotoAddContact() {
+        click(By.linkText("add new"));
+    }
+
+    public boolean isThereAContact() {
+        return isElementPresent(By.name("selected[]"));
     }
 }
