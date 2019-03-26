@@ -32,8 +32,9 @@ public class ContactHelper extends HelperBase {
 
     }
 
-    public void editContactModification() {
-        click(By.xpath("//img[@alt='Edit']"));
+    public void editContactModification(int index) {
+        //click(By.xpath("//img[@alt='Edit']"));
+        wd.findElement(By.cssSelector("img[alt=\"Edit\"]")).click();
     }
 
     public void updateContactModification() {
@@ -55,7 +56,7 @@ public class ContactHelper extends HelperBase {
 
     public void createContact(ContactData contactData) {
         gotoAddContact();
-        fillContactForm(contactData);
+        fillContactForm(new ContactData("Santa", "Claus", "North", "234567", "020000", "1111111", "santa@test.com", "test"));
         enterContactCreation();
         returnToHomePage();
     }
@@ -87,10 +88,9 @@ public class ContactHelper extends HelperBase {
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
             String firstname =  element.findElement(By.xpath(".//td[3]")).getText();
             String lastname = element.findElement(By.xpath(".//td[2]")).getText();
-            ContactData contactData = new ContactData(id, firstname, lastname, null, null, null, null, null, null);
+            ContactData contactData = new ContactData(id, firstname, lastname, "North", null, null, null, null, null);
             contacts.add(contactData);
         }
         return contacts;
     }
-
 }
