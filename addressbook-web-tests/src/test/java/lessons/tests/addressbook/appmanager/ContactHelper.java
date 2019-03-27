@@ -32,17 +32,22 @@ public class ContactHelper extends HelperBase {
 
     }
 
-    public void editContactModification(int index) {
-        //click(By.xpath("//img[@alt='Edit']"));
-        wd.findElement(By.cssSelector("img[alt=\"Edit\"]")).click();
+    public void editContactModification(int id) {
+        /*int r = index + 1;
+        String y = "tr:nth-child(" + (r) + ")";
+        wd.findElements(By.cssSelector(y));
+        String e = "(//img[@alt='Edit'])[" + r + "]";
+        click(By.xpath(e));*/
+        wd.findElement(By.cssSelector("input[value ='" + id + "']")).click();
     }
 
     public void updateContactModification() {
         click(By.name("update"));
     }
 
-    public void selectContact(int index) {
-        wd.findElements(By.name("selected[]")).get(index).click();
+    public void selectContact(int id) {
+       // wd.findElements(By.name("selected[]")).get(index).click();
+        wd.findElement(By.cssSelector("input[value ='" + id + "']")).click();
     }
 
     public void deleteSelectedContact() {
@@ -56,7 +61,7 @@ public class ContactHelper extends HelperBase {
 
     public void createContact(ContactData contactData) {
         gotoAddContact();
-        fillContactForm(new ContactData("Santa", "Claus", "North", "234567", "020000", "1111111", "santa@test.com", "test"));
+        fillContactForm(contactData);
         enterContactCreation();
         returnToHomePage();
     }
@@ -88,7 +93,7 @@ public class ContactHelper extends HelperBase {
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
             String firstname =  element.findElement(By.xpath(".//td[3]")).getText();
             String lastname = element.findElement(By.xpath(".//td[2]")).getText();
-            ContactData contactData = new ContactData(id, firstname, lastname, null, null, null, null, null, null);
+            ContactData contactData = new ContactData(id, firstname, lastname, "North", "234567", "020000", "1111111", "santa@test.com", "test");
             contacts.add(contactData);
         }
         return contacts;
