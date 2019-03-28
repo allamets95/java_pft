@@ -62,6 +62,20 @@ public class ContactHelper extends HelperBase {
         returnToHomePage();
     }
 
+    public void modifyContact(int index, ContactData contactData) {
+        editContactModification(index);
+        fillContactForm(contactData);
+        updateContactModification();
+        returnToHomePage();
+    }
+
+    public void deleteContact(int index) {
+        selectContact(index);
+        deleteSelectedContact();
+        confirmDeletion();
+        returnToHomePage();
+    }
+
     public void returnToHomePage() {
         if (isElementPresent(By.id("maintable"))) {
             return;
