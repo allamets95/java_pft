@@ -34,8 +34,7 @@ public class ContactHelper extends HelperBase {
 
     public void editContactModification(int id) {
 
-        click(By.xpath("//tr[@class='odd']/td[8]/a"));
-        //click(By.xpath("//div/div[4]/form[2]/table/tbody/tr[2]/td[8]/a/img"));
+        wd.findElement(By.cssSelector("a[href='edit.php?id=" + id + "']")).click();
     }
 
     public void updateContactModification() {
@@ -62,14 +61,14 @@ public class ContactHelper extends HelperBase {
         returnToHomePage();
     }
 
-    public void modifyContact(int index, ContactData contactData) {
-        editContactModification(index);
+    public void modifyContact(ContactData contactData) {
+        editContactModification(contactData.getId());
         fillContactForm(contactData);
         updateContactModification();
         returnToHomePage();
     }
 
-    public void deleteContact(int index) {
+    public void delete(int index) {
         selectContact(index);
         deleteSelectedContact();
         confirmDeletion();
@@ -96,7 +95,7 @@ public class ContactHelper extends HelperBase {
 
     }
 
-    public List<ContactData> getContactList() {
+    public List<ContactData> contactList() {
         List<ContactData> contacts = new ArrayList<ContactData>();
         List<WebElement> elements = wd.findElements(By.name("entry")); //By.cssSelector("tr")By.name("entry")
         for (WebElement element : elements) {
