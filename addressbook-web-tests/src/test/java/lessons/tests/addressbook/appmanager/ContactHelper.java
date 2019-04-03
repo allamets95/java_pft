@@ -1,13 +1,13 @@
 package lessons.tests.addressbook.appmanager;
 
 import lessons.tests.addressbook.model.ContactData;
+import lessons.tests.addressbook.model.Contacts;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
-
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 
 public class ContactHelper extends HelperBase {
@@ -41,10 +41,10 @@ public class ContactHelper extends HelperBase {
         click(By.name("update"));
     }
 
-    public void selectContact(int index) {
-       wd.findElements(By.name("selected[]")).get(index).click();
-    }
 
+    public void selectContactById(int id) {
+        wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
+    }
     public void deleteSelectedContact() {
         click(By.xpath("//input[@value='Delete']"));
     }
@@ -68,8 +68,8 @@ public class ContactHelper extends HelperBase {
         returnToHomePage();
     }
 
-    public void deleteContact(int index) {
-        selectContact(index);
+    public void deleteContact(ContactData contactData) {
+        selectContactById(contactData.getId());
         deleteSelectedContact();
         confirmDeletion();
         returnToHomePage();
@@ -95,8 +95,8 @@ public class ContactHelper extends HelperBase {
 
     }
 
-    public List<ContactData> contactList() {
-        List<ContactData> contacts = new ArrayList<ContactData>();
+    public Contacts allc() {
+       Contacts contacts = new Contacts();
         List<WebElement> elements = wd.findElements(By.name("entry")); //By.cssSelector("tr")By.name("entry")
         for (WebElement element : elements) {
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
@@ -106,5 +106,5 @@ public class ContactHelper extends HelperBase {
         }
         return contacts;
     }
+
 }
-//"Santa", "Claus", "North", "234567", "020000", "1111111", "santa@test.com", "test"
