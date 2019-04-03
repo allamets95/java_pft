@@ -56,7 +56,7 @@ public class ContactHelper extends HelperBase {
 
     public void createContact(ContactData contactData) {
         gotoAddContact();
-        fillContactForm(new ContactData("Santa", "Claus", "North", "234567", "020000", "1111111", "santa@test.com", "test"));
+        fillContactForm(new ContactData().withFirstname("Santa").withLastname("Claus").withCompany("North").withHome("234567").withMobile("020000").withWork("1111111").withEmail("santa@test.com").withGroup("test"));
         enterContactCreation();
         returnToHomePage();
     }
@@ -68,7 +68,7 @@ public class ContactHelper extends HelperBase {
         returnToHomePage();
     }
 
-    public void delete(int index) {
+    public void deleteContact(int index) {
         selectContact(index);
         deleteSelectedContact();
         confirmDeletion();
@@ -102,9 +102,9 @@ public class ContactHelper extends HelperBase {
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
             String firstname =  element.findElement(By.xpath(".//td[3]")).getText();
             String lastname = element.findElement(By.xpath(".//td[2]")).getText();
-            ContactData contactData = new ContactData(id, firstname, lastname, null, null, null, null, null, null);
-            contacts.add(contactData);
+            contacts.add(new ContactData().withId(id).withFirstname(firstname).withLastname(lastname));
         }
         return contacts;
     }
 }
+//"Santa", "Claus", "North", "234567", "020000", "1111111", "santa@test.com", "test"

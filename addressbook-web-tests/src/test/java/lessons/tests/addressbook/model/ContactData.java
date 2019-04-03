@@ -3,47 +3,64 @@ package lessons.tests.addressbook.model;
 public class ContactData {
 
 
-    private int id;
-    private final String firstname;
-    private final String lastname;
-    private final String company;
-    private final String home;
-    private final String mobile;
-    private final String work;
-    private final String email;
+    private int id= Integer.MAX_VALUE;
+    private String firstname;
+    private String lastname;
+    private String company;
+    private String home;
+    private String mobile;
+    private String work;
+    private String email;
     private String group;
-
-
-
-    public ContactData(String firstname, String lastname, String company, String home, String mobile, String work, String email, String group) {
-        this.id = Integer.MAX_VALUE;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.company = company;
-        this.home = home;
-        this.mobile = mobile;
-        this.work = work;
-        this.email = email;
-        this.group = group;
-    }
-
-    public ContactData(int id, String firstname, String lastname, String company, String home, String mobile, String work, String email, String group) {
-        this.id = id;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.company = company;
-        this.home = home;
-        this.mobile = mobile;
-        this.work = work;
-        this.email = email;
-        this.group = group;
-    }
 
     public int getId() {
         return id;
     }
-    public void setId(int id) {
+
+    public ContactData withId(int id) {
+
         this.id = id;
+        return this;
+    }
+
+    public ContactData withFirstname(String firstname) {
+        this.firstname = firstname;
+        return this;
+    }
+
+    public ContactData withLastname(String lastname) {
+        this.lastname = lastname;
+        return this;
+    }
+
+    public ContactData withCompany(String company) {
+        this.company = company;
+        return this;
+    }
+
+    public ContactData withHome(String home) {
+        this.home = home;
+        return this;
+    }
+
+    public ContactData withMobile(String mobile) {
+        this.mobile = mobile;
+        return this;
+    }
+
+    public ContactData withWork(String work) {
+        this.work = work;
+        return this;
+    }
+
+    public ContactData withEmail(String email) {
+        this.email = email;
+        return this;
+    }
+
+    public ContactData withGroup(String group) {
+        this.group = group;
+        return this;
     }
 
     public String getFirstname() {
