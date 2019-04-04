@@ -93,7 +93,7 @@ public class ContactHelper extends HelperBase {
         return isElementPresent(By.name("selected[]"));
     }
 
-    public int getContactCount() {
+    public int сontactCount() {
        return wd.findElements(By.name("selected[]")).size();
 
     }

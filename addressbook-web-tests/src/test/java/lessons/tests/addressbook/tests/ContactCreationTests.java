@@ -15,12 +15,11 @@ public class ContactCreationTests extends TestBase {
 
   @Test
   public void testContactCreation() throws Exception {
-    Contacts before = (Contacts) app.contact().allc();
+    Contacts before = app.contact().allc();
     ContactData contactData = new ContactData().withFirstname("Santa").withLastname("Claus").withCompany("North").withHome("234567").withMobile("020000").withWork("1111111").withEmail("santa@test.com").withGroup("test");
     app.contact().createContact(contactData);
-    Contacts after= (Contacts) app.contact().allc();
-    assertThat(after.size(), equalTo( + 1));
-
+    assertThat(app.contact().сontactCount(), equalTo( before.size()+ 1));
+    Contacts after= app.contact().allc();
     assertThat(after, equalTo(
             before.withAddedc( contactData.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt()))));
   }
