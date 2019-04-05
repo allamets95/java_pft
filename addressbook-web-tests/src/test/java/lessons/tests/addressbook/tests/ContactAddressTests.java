@@ -1,15 +1,12 @@
 package lessons.tests.addressbook.tests;
 
 import lessons.tests.addressbook.model.ContactData;
-import lessons.tests.addressbook.model.Contacts;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-
-public class ContactDeletionTests extends TestBase {
+public class ContactAddressTests extends TestBase {
     @BeforeMethod
     public void ensurePreconditions(){
         if (app.contact().allc().size() == 0) {
@@ -18,14 +15,13 @@ public class ContactDeletionTests extends TestBase {
     }
 
     @Test
-
-    public void testContactDeletion() {
-        Contacts before = app.contact().allc();
-        ContactData deletedContact = before.iterator().next();
-        app.contact().deleteContact(deletedContact);
-        assertThat(app.contact().сontactCount(), equalTo( before.size()- 1));
-        Contacts after = app.contact().allc();
-        assertThat(after, equalTo(before.withoutc(deletedContact)));
+    public void testContactAddress(){
+        app.goTo().gotoHomePage();
+        ContactData contactData =app.contact().allc().iterator().next();
+        ContactData contactInfoFromAddressForm = app.contact().infoFromAddressForm(contactData);
+        assertThat(contactData.getAddress(), equalTo(cleaned(contactInfoFromAddressForm.getAddress())));
     }
-
+    public String cleaned (String address){
+        return address.replaceAll("\\s", "").replaceAll("[-()]", "");
+    }
 }

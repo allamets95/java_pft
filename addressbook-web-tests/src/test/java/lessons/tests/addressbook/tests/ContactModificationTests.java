@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.testng.Assert.assertEquals;
+
 
 public class ContactModificationTests extends TestBase {
 
@@ -26,8 +26,6 @@ public class ContactModificationTests extends TestBase {
         app.contact().modifyContact(contactData);
         assertThat(app.contact().сontactCount(), equalTo(before.size()));
         Contacts after = app.contact().allc();
-        assertEquals(after.size(), before.size());
-
         assertThat(after, equalTo(before.withoutc(modifiedContact).withAddedc(contactData)));
     }
 
