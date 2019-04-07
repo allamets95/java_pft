@@ -19,7 +19,7 @@ public class ContactCreationTests extends TestBase {
   public void testContactCreation() throws Exception {
     Contacts before = app.contact().allc();
     File photo = new File("src/test/resources/sqa.png");
-    ContactData contactData = new ContactData().withFirstname("Santa").withLastname("Claus").withCompany("North").withPhoto(photo).withHome("234567").withMobile("020000").withWork("1111111").withEmail("santa@test.com");
+    ContactData contactData = new ContactData().withFirstname("Santa").withLastname("Claus");
     app.contact().createContact(contactData);
     assertThat(app.contact().сontactCount(), equalTo( before.size()+ 1));
     Contacts after= app.contact().allc();
