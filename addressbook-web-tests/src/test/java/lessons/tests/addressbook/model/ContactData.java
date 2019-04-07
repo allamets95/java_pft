@@ -1,5 +1,7 @@
 package lessons.tests.addressbook.model;
 
+import java.io.File;
+
 public class ContactData {
 
 
@@ -17,8 +19,16 @@ public class ContactData {
     private String email2;
     private String email3;
     private String group;
+    private File photo;
 
+    public File getPhoto() {
+        return photo;
+    }
 
+    public ContactData withPhoto(File photo) {
+        this.photo = photo;
+        return this;
+    }
 
     public String getAllEmails() {
         return allEmails;

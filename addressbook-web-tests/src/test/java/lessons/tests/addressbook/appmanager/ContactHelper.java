@@ -5,6 +5,8 @@ import lessons.tests.addressbook.model.Contacts;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
+import java.io.File;
 import java.util.List;
 
 
@@ -23,6 +25,7 @@ public class ContactHelper extends HelperBase {
     public void fillContactForm(ContactData contactData) {
         type(By.name("firstname"), contactData.getFirstname());
         type(By.name("lastname"), contactData.getLastname());
+        attach(By.name("photo"), contactData.getPhoto());
         type(By.name("company"), contactData.getCompany());
         type(By.name("address"), contactData.getAddress());
         type(By.name("home"), contactData.getHome());
@@ -58,7 +61,8 @@ public class ContactHelper extends HelperBase {
 
     public void createContact(ContactData contactData) {
         gotoAddContact();
-        fillContactForm(new ContactData().withFirstname("Santa").withLastname("Claus").withCompany("North").withAddress("Cold")
+        File photo =new File("src/test/resources/sqa.png");
+        fillContactForm(new ContactData().withFirstname("Santa").withLastname("Claus").withCompany("North").withPhoto(photo).withAddress("Cold")
                 .withHome("234567").withMobile("020000").withWork("1111111").withEmail("santa@test.com").withEmail2("test@test.com").withEmail3("test@test.com").withGroup("test"));
         contactCache = null;
         enterContactCreation();
