@@ -32,6 +32,7 @@ public class ContactData {
     private String email2;
     @Expose
     private String email3;
+    @Expose
     private String group;
     private File photo;
 

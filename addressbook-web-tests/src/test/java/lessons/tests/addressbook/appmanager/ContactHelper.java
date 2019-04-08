@@ -62,7 +62,8 @@ public class ContactHelper extends HelperBase {
     public void createContact(ContactData contactData) {
         gotoAddContact();
         File photo =new File("src/test/resources/sqa.png");
-        fillContactForm(contactData);
+        fillContactForm(new ContactData().withFirstname("Santa").withLastname("Claus").withCompany("North").withPhoto(photo).withAddress("Cold")
+                .withHome("234567").withMobile("020000").withWork("1111111").withEmail("santa@test.com").withEmail2("test@test.com").withEmail3("test@test.com").withGroup("test"));
         contactCache = null;
         enterContactCreation();
         returnToHomePage();

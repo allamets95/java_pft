@@ -29,11 +29,14 @@ public class HelperBase {
             }
         }
     }
+
     protected void attach(By locator, File file) {
-        click(locator);
+
         if (file != null) {
+            String existingText = wd.findElement(locator).getAttribute("value");
             wd.findElement(locator).sendKeys(file.getAbsolutePath());
         }
+
     }
 
     public boolean isAlertPresent() {

@@ -1,26 +1,41 @@
 [
   {
-    "firstname": "Santa0",
-    "lastname": "Clause0",
-    "company": "North0",
-    "address": "Ukraine 0",
-    "home": "+380000000020",
-    "mobile": "+380999999990",
-    "work": "+380000000000",
-    "email": "testemail0@mail.ru",
-    "email2": "testemail20@mail.ru",
-    "email3": "testemail30@mail.ru"
+    "firstname": "User0",
+    "lastname": "LastName0",
+    "company": "Company0",
+    "address": "Ukraine, ul. TestStr 0, kv. 0",
+    "home": "1110",
+    "mobile": "+38090000000",
+    "work": "00000s",
+    "email": "testemail0@",
+    "email2": "testemail30@",
+    "email3": "testemail30@",
+    "group": "test"
   },
   {
-    "firstname": "Santa1",
-    "lastname": "Clause1",
-    "company": "North1",
-    "address": "Ukraine 1",
-    "home": "+380000000021",
-    "mobile": "+380999999991",
-    "work": "+380000000001",
-    "email": "testemail1@mail.ru",
-    "email2": "testemail21@mail.ru",
-    "email3": "testemail31@mail.ru"
+    "firstname": "User1",
+    "lastname": "LastName1",
+    "company": "Company1",
+    "address": "Ukraine, ul. TestStr 1, kv. 1",
+    "home": "1111",
+    "mobile": "+38090000001",
+    "work": "00000s",
+    "email": "testemail1@",
+    "email2": "testemail31@",
+    "email3": "testemail31@",
+    "group": "test"
+  },
+  {
+    "firstname": "User2",
+    "lastname": "LastName2",
+    "company": "Company2",
+    "address": "Ukraine, ul. TestStr 2, kv. 2",
+    "home": "1112",
+    "mobile": "+38090000002",
+    "work": "00000s",
+    "email": "testemail2@",
+    "email2": "testemail32@",
+    "email3": "testemail32@",
+    "group": "test"
   }
 ]

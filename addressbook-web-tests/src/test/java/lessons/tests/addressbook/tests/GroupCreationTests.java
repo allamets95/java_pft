@@ -1,13 +1,9 @@
 package lessons.tests.addressbook.tests;
-
-
 import com.thoughtworks.xstream.XStream;
 import lessons.tests.addressbook.model.GroupData;
 import lessons.tests.addressbook.model.Groups;
-
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -15,7 +11,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.IsEqual.equalTo;
 
@@ -79,16 +74,4 @@ public class GroupCreationTests extends TestBase {
 
     }
 
-    @Test
-    public void testBadGroupCreation() {
-        app.goTo().groupPage();
-        GroupData group = new GroupData().withName("test222").withHeader("test1").withFooter("test2'");
-        if (!app.group().isThereAGroup()) app.group().createGroup(group);
-        Groups before = app.group().allg();
-        app.group().createGroup(group);
-        assertThat(app.group(). сount(), equalTo(before.size()));
-        Groups after = app.group().allg();
-        assertThat(after, equalTo(before));
-
-    }
 }
