@@ -15,6 +15,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class ContactCreationTests extends TestBase {
 
 
+
+
   @Test
   public void testContactCreation() throws Exception {
     Contacts before = app.contact().allc();
@@ -29,3 +31,4 @@ public class ContactCreationTests extends TestBase {
 
 
 }
+
