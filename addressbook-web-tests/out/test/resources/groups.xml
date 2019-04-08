@@ -1,122 +1,12 @@
 <list>
-  <lessons.tests.addressbook.model.GroupData>
-    <id>2147483647</id>
+  <group>
     <name>test 0</name>
-    <header>headar 0</header>
+    <header>header 0</header>
     <footer>footer 0</footer>
-  </lessons.tests.addressbook.model.GroupData>
-  <lessons.tests.addressbook.model.GroupData>
-    <id>2147483647</id>
+  </group>
+  <group>
     <name>test 1</name>
-    <header>headar 1</header>
+    <header>header 1</header>
     <footer>footer 1</footer>
-  </lessons.tests.addressbook.model.GroupData>
-  <lessons.tests.addressbook.model.GroupData>
-    <id>2147483647</id>
-    <name>test 2</name>
-    <header>headar 2</header>
-    <footer>footer 2</footer>
-  </lessons.tests.addressbook.model.GroupData>
-  <lessons.tests.addressbook.model.GroupData>
-    <id>2147483647</id>
-    <name>test 3</name>
-    <header>headar 3</header>
-    <footer>footer 3</footer>
-  </lessons.tests.addressbook.model.GroupData>
-  <lessons.tests.addressbook.model.GroupData>
-    <id>2147483647</id>
-    <name>test 4</name>
-    <header>headar 4</header>
-    <footer>footer 4</footer>
-  </lessons.tests.addressbook.model.GroupData>
-  <lessons.tests.addressbook.model.GroupData>
-    <id>2147483647</id>
-    <name>test 5</name>
-    <header>headar 5</header>
-    <footer>footer 5</footer>
-  </lessons.tests.addressbook.model.GroupData>
-  <lessons.tests.addressbook.model.GroupData>
-    <id>2147483647</id>
-    <name>test 6</name>
-    <header>headar 6</header>
-    <footer>footer 6</footer>
-  </lessons.tests.addressbook.model.GroupData>
-  <lessons.tests.addressbook.model.GroupData>
-    <id>2147483647</id>
-    <name>test 7</name>
-    <header>headar 7</header>
-    <footer>footer 7</footer>
-  </lessons.tests.addressbook.model.GroupData>
-  <lessons.tests.addressbook.model.GroupData>
-    <id>2147483647</id>
-    <name>test 8</name>
-    <header>headar 8</header>
-    <footer>footer 8</footer>
-  </lessons.tests.addressbook.model.GroupData>
-  <lessons.tests.addressbook.model.GroupData>
-    <id>2147483647</id>
-    <name>test 9</name>
-    <header>headar 9</header>
-    <footer>footer 9</footer>
-  </lessons.tests.addressbook.model.GroupData>
-  <lessons.tests.addressbook.model.GroupData>
-    <id>2147483647</id>
-    <name>test 10</name>
-    <header>headar 10</header>
-    <footer>footer 10</footer>
-  </lessons.tests.addressbook.model.GroupData>
-  <lessons.tests.addressbook.model.GroupData>
-    <id>2147483647</id>
-    <name>test 11</name>
-    <header>headar 11</header>
-    <footer>footer 11</footer>
-  </lessons.tests.addressbook.model.GroupData>
-  <lessons.tests.addressbook.model.GroupData>
-    <id>2147483647</id>
-    <name>test 12</name>
-    <header>headar 12</header>
-    <footer>footer 12</footer>
-  </lessons.tests.addressbook.model.GroupData>
-  <lessons.tests.addressbook.model.GroupData>
-    <id>2147483647</id>
-    <name>test 13</name>
-    <header>headar 13</header>
-    <footer>footer 13</footer>
-  </lessons.tests.addressbook.model.GroupData>
-  <lessons.tests.addressbook.model.GroupData>
-    <id>2147483647</id>
-    <name>test 14</name>
-    <header>headar 14</header>
-    <footer>footer 14</footer>
-  </lessons.tests.addressbook.model.GroupData>
-  <lessons.tests.addressbook.model.GroupData>
-    <id>2147483647</id>
-    <name>test 15</name>
-    <header>headar 15</header>
-    <footer>footer 15</footer>
-  </lessons.tests.addressbook.model.GroupData>
-  <lessons.tests.addressbook.model.GroupData>
-    <id>2147483647</id>
-    <name>test 16</name>
-    <header>headar 16</header>
-    <footer>footer 16</footer>
-  </lessons.tests.addressbook.model.GroupData>
-  <lessons.tests.addressbook.model.GroupData>
-    <id>2147483647</id>
-    <name>test 17</name>
-    <header>headar 17</header>
-    <footer>footer 17</footer>
-  </lessons.tests.addressbook.model.GroupData>
-  <lessons.tests.addressbook.model.GroupData>
-    <id>2147483647</id>
-    <name>test 18</name>
-    <header>headar 18</header>
-    <footer>footer 18</footer>
-  </lessons.tests.addressbook.model.GroupData>
-  <lessons.tests.addressbook.model.GroupData>
-    <id>2147483647</id>
-    <name>test 19</name>
-    <header>headar 19</header>
-    <footer>footer 19</footer>
-  </lessons.tests.addressbook.model.GroupData>
+  </group>
 </list>
