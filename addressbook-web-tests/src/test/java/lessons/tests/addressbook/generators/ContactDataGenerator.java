@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ContactDataGenerator {
-    @Parameter(names ="-g", description = "Contact count")
+    @Parameter(names ="-c", description = "Contact count")
     public int count;
 
     @Parameter (names = "-f", description = "Targets file")
