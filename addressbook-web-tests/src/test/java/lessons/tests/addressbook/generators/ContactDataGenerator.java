@@ -8,7 +8,6 @@ import com.beust.jcommander.ParameterException;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.thoughtworks.xstream.XStream;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -78,7 +77,6 @@ public class ContactDataGenerator {
         }
         writer.close();
     }
-
     private List<ContactData> generateContacts(int count) {
         List<ContactData> contacts = new ArrayList<>();
         for (int i = 0; i < count; i++) {
