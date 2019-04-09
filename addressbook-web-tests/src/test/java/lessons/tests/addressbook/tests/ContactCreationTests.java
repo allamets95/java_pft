@@ -1,13 +1,13 @@
 
 package lessons.tests.addressbook.tests;
 
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.thoughtworks.xstream.XStream;
 import lessons.tests.addressbook.model.ContactData;
 import lessons.tests.addressbook.model.Contacts;
-import org.testng.annotations.*;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -18,9 +18,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
-
+import static org.hamcrest.core.IsEqual.equalTo;
 
 
 public class ContactCreationTests extends TestBase {
@@ -58,7 +57,7 @@ public class ContactCreationTests extends TestBase {
     XStream xStream = new XStream();
     xStream.processAnnotations(ContactData.class);
     List<ContactData> contacts = (List<ContactData>) xStream.fromXML(xml);
-    return contacts.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
+    return contacts.stream().map((с) -> new Object[]{с}).collect(Collectors.toList()).iterator();
   }
 
   @DataProvider
@@ -73,9 +72,8 @@ public class ContactCreationTests extends TestBase {
     }
     Gson gson = new Gson();
     List<ContactData> contacts = gson.fromJson(json, new TypeToken<List<ContactData>>() {}.getType());
-    return contacts.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
+    return contacts.stream().map((с) -> new Object[]{с}).collect(Collectors.toList()).iterator();
   }
-
 
   @Test(dataProvider = "validContactsFromJson")
   public void testContactCreation(ContactData contactData)  {
