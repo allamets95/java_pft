@@ -8,7 +8,6 @@ import com.thoughtworks.xstream.annotations.XStreamOmitField;
 @XStreamAlias("contact")
 public class ContactData {
     @XStreamOmitField
-
     private int id= Integer.MAX_VALUE;
     @Expose
     private String firstname;
@@ -35,7 +34,6 @@ public class ContactData {
     @Expose
     private String group;
     private File photo;
-
     public File getPhoto() {
         return photo;
     }

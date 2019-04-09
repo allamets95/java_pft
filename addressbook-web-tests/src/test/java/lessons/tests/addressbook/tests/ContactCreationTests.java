@@ -1,3 +1,4 @@
+
 package lessons.tests.addressbook.tests;
 
 
@@ -82,10 +83,8 @@ public class ContactCreationTests extends TestBase {
     app.contact().createContact(contactData);
     Contacts after = app.contact().allc();
     assertThat(app.contact().сontactCount(), equalTo( before.size()+ 1));
-    assertThat(after, equalTo(
-            before.withAddedc( contactData.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt()))));
+    
   }
 
 
 }
-

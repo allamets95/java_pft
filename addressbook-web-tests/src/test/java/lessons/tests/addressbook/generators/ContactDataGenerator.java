@@ -71,20 +71,22 @@ public class ContactDataGenerator {
         System.out.println(new File(".").getAbsolutePath());
         Writer writer = new FileWriter(file);
         for (ContactData contact : contacts) {
-            writer.write(String.format("%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s\n", contact.getFirstname(),contact.getLastname()));
+            writer.write(String.format("%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s\n", contact.getFirstname(),contact.getLastname(),
+                    contact.getMobile(),contact.getWork(),contact.getHome(),contact,contact.getGroup(),contact.getAddress(),contact.getCompany(),contact.getEmail(), contact.getEmail2(),contact.getEmail3()));
         }
         writer.close();
     }
 
+
     private List<ContactData> generateContact(int count) {
         List<ContactData> contacts = new ArrayList<>();
         for (int i = 0; i < count; i++) {
-            contacts.add(new ContactData().withFirstname(String.format("User%s", i))
-                    .withLastname(String.format("LastName%s", i)).withGroup("test")
-                    .withCompany(String.format("Company%s", i)).withMobile(String.format("+3809000000%s", i)).withHome(String.format("111%s", i))
-                    .withWork(String.format("00000s", i)).withEmail(String.format("testemail%s@", i))
-                    .withEmail2(String.format("testemail3%s@", i)).withEmail3(String.format("testemail3%s@", i))
-                    .withAddress(String.format("Ukraine, ul. TestStr %s, kv. %s", i,i)));
+            contacts.add(new ContactData().withFirstname(String.format("Santa", i))
+                    .withLastname(String.format("Claus%s", i)).withGroup("test")
+                    .withCompany(String.format("North%s", i)).withMobile(String.format("020000%s", i)).withHome(String.format("23456%s", i))
+                    .withWork(String.format("1111111s", i)).withEmail(String.format("santa@test.com%s@", i))
+                    .withEmail2(String.format("test@test.com%s@", i)).withEmail3(String.format("test@test.com%s@", i))
+                    .withAddress(String.format("Cold%s", i,i)));
 
         }
         return contacts;
