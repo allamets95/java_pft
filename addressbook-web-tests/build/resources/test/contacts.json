@@ -1,0 +1,41 @@
+[
+  {
+    "firstname": "Santa",
+    "lastname": "Claus0",
+    "company": "North0",
+    "address": "Cold0",
+    "home": "234560",
+    "mobile": "0200000",
+    "work": "1111111s",
+    "email": "santa@test.com0@",
+    "email2": "test@test.com0@",
+    "email3": "test@test.com0@",
+    "group": "test"
+  },
+  {
+    "firstname": "Santa",
+    "lastname": "Claus1",
+    "company": "North1",
+    "address": "Cold1",
+    "home": "234561",
+    "mobile": "0200001",
+    "work": "1111111s",
+    "email": "santa@test.com1@",
+    "email2": "test@test.com1@",
+    "email3": "test@test.com1@",
+    "group": "test"
+  },
+  {
+    "firstname": "Santa",
+    "lastname": "Claus2",
+    "company": "North2",
+    "address": "Cold2",
+    "home": "234562",
+    "mobile": "0200002",
+    "work": "1111111s",
+    "email": "santa@test.com2@",
+    "email2": "test@test.com2@",
+    "email3": "test@test.com2@",
+    "group": "test"
+  }
+]
