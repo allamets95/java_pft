@@ -75,8 +75,7 @@ public class ContactDataGenerator {
         }
         writer.close();
     }
-
-
+    
     private List<ContactData> generateContact(int count) {
         List<ContactData> contacts = new ArrayList<>();
         for (int i = 0; i < count; i++) {
