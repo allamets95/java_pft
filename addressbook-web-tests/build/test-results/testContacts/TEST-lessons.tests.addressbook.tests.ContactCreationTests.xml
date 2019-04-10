@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="lessons.tests.addressbook.tests.ContactCreationTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2019-04-10T06:22:56" hostname="ideapad" time="226.798">
+  <properties/>
+  <testcase name="testContactCreation[0](ContactData{id='2147483647', firstname='Santa', lastname='Claus0'})" classname="lessons.tests.addressbook.tests.ContactCreationTests" time="100.801"/>
+  <testcase name="testContactCreation[1](ContactData{id='2147483647', firstname='Santa', lastname='Claus1'})" classname="lessons.tests.addressbook.tests.ContactCreationTests" time="61.723"/>
+  <testcase name="testContactCreation[2](ContactData{id='2147483647', firstname='Santa', lastname='Claus2'})" classname="lessons.tests.addressbook.tests.ContactCreationTests" time="64.273"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:190:13
+
+1554877540053	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+bail@chrome://marionette/content/sync.js:224:64
+1554877540978	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+bail@chrome://marionette/content/sync.js:224:64
+1554877542198	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+bail@chrome://marionette/content/sync.js:224:64
+1554877543323	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+bail@chrome://marionette/content/sync.js:224:64
+1554877544341	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+bail@chrome://marionette/content/sync.js:224:64
+1554877545524	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+bail@chrome://marionette/content/sync.js:224:64
+1554877546602	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+bail@chrome://marionette/content/sync.js:224:64
+1554877547767	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+bail@chrome://marionette/content/sync.js:224:64
+1554877548977	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+bail@chrome://marionette/content/sync.js:224:64
+1554877550021	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+bail@chrome://marionette/content/sync.js:224:64
+]]></system-err>
+</testsuite>
