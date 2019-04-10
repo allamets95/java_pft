@@ -13,6 +13,7 @@ dependencies {
     compile("com.thoughtworks.xstream:xstream:1.4.8")
     compile("com.google.code.gson:gson:2.8.5")
     compile("ch.qos.logback:logback-classic:1.1.7")
+    compile("mysql:mysql-connector-java:5.1.47")
 }
 task testGroups(type: Test) {
     useTestNG {
