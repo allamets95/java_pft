@@ -1,0 +1,9 @@
+<suite name="Suite1" verbose="1" >
+    <test name="Verify" >
+        <classes>
+            <class name="lessons.tests.addressbook.tests.ContactAddressTests" />
+            <class name="lessons.tests.addressbook.tests.ContactEmailTests" />
+            <class name="lessons.tests.addressbook.tests.ContactPhoneTests" />
+        </classes>
+    </test>
+</suite>
