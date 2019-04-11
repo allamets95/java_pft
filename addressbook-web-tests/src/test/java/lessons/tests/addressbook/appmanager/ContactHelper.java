@@ -2,9 +2,12 @@ package lessons.tests.addressbook.appmanager;
 
 import lessons.tests.addressbook.model.ContactData;
 import lessons.tests.addressbook.model.Contacts;
+import lessons.tests.addressbook.model.GroupData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 import java.io.File;
 import java.util.List;
@@ -22,9 +25,20 @@ public class ContactHelper extends HelperBase {
         click(By.xpath("//*[@id=\"content\"]/form/input[1]"));
     }
 
-    public void fillContactForm(ContactData contactData) {
+    public void fillContactForm(ContactData contactData, boolean creation) {
         type(By.name("firstname"), contactData.getFirstname());
         type(By.name("lastname"), contactData.getLastname());
+        if (contactData.getGroups().size() > 0) {
+            Assert.assertTrue(contactData.getGroups().size() == 1);
+            new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroups().iterator().next().getName());
+
+        }
+        else {
+            type(By.name("firstname"), contactData.getFirstname());
+            type(By.name("lastname"), contactData.getLastname());
+            Assert.assertFalse(isElementPresent(By.name("new_group")));
+
+        }
         type(By.name("company"), contactData.getCompany());
         type(By.name("address"), contactData.getAddress());
         type(By.name("home"), contactData.getHome());
@@ -33,7 +47,6 @@ public class ContactHelper extends HelperBase {
         type(By.name("email"), contactData.getEmail());
         type(By.name("email2"), contactData.getEmail2());
         type(By.name("email3"), contactData.getEmail3());
-
     }
 
     public void editContactModification(int id) {
@@ -58,11 +71,12 @@ public class ContactHelper extends HelperBase {
         acceptAlert();
     }
 
-    public void createContact(ContactData contactData) {
+    public void createContact() {
         gotoAddContact();
         File photo =new File("src/test/resources/sqa.png");
-        fillContactForm(new ContactData().withFirstname("Santa").withLastname("Claus").withCompany("North").withPhoto(photo).withAddress("Cold")
-                .withHome("234567").withMobile("020000").withWork("1111111").withEmail("santa@test.com").withEmail2("test@test.com").withEmail3("test@test.com").withGroup("test"));
+        ContactData contactData= new ContactData().withFirstname("Santa").withLastname("Claus").withCompany("North").withPhoto(photo).withAddress("Cold")
+                .withHome("234567").withMobile("020000").withWork("1111111").withEmail("santa@test.com").withEmail2("test@test.com").withEmail3("test@test.com");
+        fillContactForm(contactData,true);
         contactCache = null;
         enterContactCreation();
         returnToHomePage();
@@ -70,7 +84,7 @@ public class ContactHelper extends HelperBase {
 
     public void modifyContact(ContactData contactData) {
         editContactModification(contactData.getId());
-        fillContactForm(contactData);
+        fillContactForm(contactData, false);
         contactCache = null;
         updateContactModification();
         returnToHomePage();
@@ -159,5 +173,12 @@ public class ContactHelper extends HelperBase {
                 withId(contact.getId()).withEmail(email).withEmail2(email2).withEmail3(email3);
     }
 
+    public void addContactToGroup() {
+        wd.findElement(By.name("add")).click();
+    }
+
+    public void removeFromGroup() {
+        wd.findElement(By.cssSelector("input[name='remove']")).click();
+    }
 }
 

@@ -1,6 +1,9 @@
 package lessons.tests.addressbook.model;
 
 import java.io.File;
+import java.util.HashSet;
+import java.util.Set;
+
 import com.google.gson.annotations.Expose;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
@@ -54,8 +57,6 @@ public class ContactData {
     @Type(type = "text")
     private String email3;
     @Expose
-    @Transient
-    private String group;
     @Column(name = "photo")
     @Type(type = "text")
     private String photo;
@@ -63,6 +64,9 @@ public class ContactData {
     private String allEmails;
     @Transient
     private String allPhones;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "address_in_group", joinColumns = @JoinColumn(name="id"), inverseJoinColumns = @JoinColumn(name="group_id"))
+    private Set<GroupData> groups = new HashSet<GroupData>();
 
     public ContactData withPhoto(String s) {
         this.photo = s;
@@ -159,11 +163,6 @@ public class ContactData {
         return this;
     }
 
-    public ContactData withGroup(String group) {
-        this.group = group;
-        return this;
-    }
-
     public String getFirstname() {
         return firstname;
     }
@@ -192,9 +191,8 @@ public class ContactData {
         return email;
     }
 
-
-    public String getGroup() {
-        return group;
+    public Groups getGroups() {
+        return new Groups(groups);
     }
 
     public ContactData withAllEmails(String allEmails) {

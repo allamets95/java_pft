@@ -4,6 +4,8 @@
     <test name="Contacts">
         <classes>
             <class name="lessons.tests.addressbook.tests.ContactCreationTests"/>
+            <class name="lessons.tests.addressbook.tests.ContactModificationTests"/>
+            <class name="lessons.tests.addressbook.tests.ContactDeletionTests"/>
         </classes>
     </test>
 </suite>

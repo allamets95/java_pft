@@ -6,6 +6,7 @@ import com.google.gson.reflect.TypeToken;
 import com.thoughtworks.xstream.XStream;
 import lessons.tests.addressbook.model.ContactData;
 import lessons.tests.addressbook.model.Contacts;
+import lessons.tests.addressbook.model.Groups;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -34,8 +35,8 @@ public class ContactCreationTests extends TestBase {
         String split[] = line.split(";");
         list.add(new Object[]{new ContactData()
                 .withFirstname(split[0])
-                .withLastname(split[1]).withGroup(split[2])
-                .withCompany(split[3]).withMobile(split[7]).withHome(split[4])
+                .withLastname(split[1])
+                .withCompany(split[2]).withMobile(split[3]).withHome(split[4])
                 .withWork(split[5]).withEmail(split[6])
                 .withEmail2(split[7]).withEmail3(split[8])
                 .withAddress(split[9]).withPhoto(split[10])});
@@ -81,10 +82,11 @@ public class ContactCreationTests extends TestBase {
   @Test(dataProvider = "validContactsFromJson")
   public void testContactCreation(ContactData contactData)  {
     app.goTo().gotoHomePage();
-    Contacts before = app.db().contacts();;
+    Groups groups = app.db().groups();
+    Contacts before = app.db().contacts();
     app.contact().createContact(contactData);
     Contacts after = app.db().contacts();
     assertThat(app.contact().сontactCount(), equalTo( before.size()+ 1));
-    verifyGroupListInUI();
+    assertThat(after, equalTo(before.withAddedc(contactData.withId(after.stream().mapToInt((g) -> g.getId()).max().getAsInt()))));
   }
 }

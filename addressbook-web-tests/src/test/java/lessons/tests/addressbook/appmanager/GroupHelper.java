@@ -6,9 +6,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import static java.lang.Integer.parseInt;
 
 public class GroupHelper extends  HelperBase{
 
@@ -96,12 +100,23 @@ public class GroupHelper extends  HelperBase{
         groupCache = new Groups();
         List<WebElement> elements = wd.findElements(By.cssSelector("span.group"));
         for (WebElement element: elements) {
-            int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
+            int id = parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
             String name = element.getText();
             groupCache.add(new GroupData().withId(id).withName(name));
         }
         return new Groups(groupCache);
     }
 
+    public void selectGroupByIdOnGroupPage(int id) {
+        Select select = new Select(wd.findElement(By.name("group")));
+        select.selectByValue(Integer.toString(id));
+    }
+    public boolean isThereAContact() {
+        return isElementPresent(By.name("selected[]"));
+    }
+    public void selectNew(int id) {
+        Select select = new Select(wd.findElement(By.name("to_group")));
+        select.selectByValue(Integer.toString(id));
+    }
 
 }
