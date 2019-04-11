@@ -38,7 +38,7 @@ public class ContactCreationTests extends TestBase {
                 .withCompany(split[3]).withMobile(split[7]).withHome(split[4])
                 .withWork(split[5]).withEmail(split[6])
                 .withEmail2(split[7]).withEmail3(split[8])
-                .withAddress(split[9])});
+                .withAddress(split[9]).withPhoto(split[10])});
         line = reader.readLine();
       }
       return list.iterator();
@@ -81,9 +81,9 @@ public class ContactCreationTests extends TestBase {
   @Test(dataProvider = "validContactsFromJson")
   public void testContactCreation(ContactData contactData)  {
     app.goTo().gotoHomePage();
-    Contacts before = app.contact().allc();
+    Contacts before = app.db().contacts();;
     app.contact().createContact(contactData);
-    Contacts after = app.contact().allc();
+    Contacts after = app.db().contacts();
     assertThat(app.contact().сontactCount(), equalTo( before.size()+ 1));
   }
 }

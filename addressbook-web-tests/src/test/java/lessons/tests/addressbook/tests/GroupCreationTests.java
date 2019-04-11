@@ -71,9 +71,9 @@ public class GroupCreationTests extends TestBase {
 
         app.goTo().groupPage();
         if (!app.group().isThereAGroup()) app.group().createGroup(group);
-        Groups before = app.group().allg();
+        Groups before = app.db().groups();
         app.group().createGroup(group);
-        Groups after = app.group().allg();
+        Groups after = app.db().groups();
         assertThat(after.size(), equalTo(before.size() + 1));
         assertThat(after, equalTo(before.withAdded(group.withId(after.stream().mapToInt((g) -> g.getId()).max().getAsInt()))));
         logger.info("Stop test testGroupCreation ");

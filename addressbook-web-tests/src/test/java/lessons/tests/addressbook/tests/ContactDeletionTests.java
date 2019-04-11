@@ -12,7 +12,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class ContactDeletionTests extends TestBase {
     @BeforeMethod
     public void ensurePreconditions(){
-        if (app.contact().allc().size() == 0) {
+        if (app.db().contacts().size() == 0) {
             app.contact().createContact(new ContactData().withFirstname("Santa").withLastname("Claus").withCompany("North").withHome("234567").withMobile("020000").withWork("1111111").withEmail("santa@test.com").withGroup("test"));
         }
     }
@@ -20,11 +20,11 @@ public class ContactDeletionTests extends TestBase {
     @Test
 
     public void testContactDeletion() {
-        Contacts before = app.contact().allc();
+        Contacts before = app.db().contacts();
         ContactData deletedContact = before.iterator().next();
         app.contact().deleteContact(deletedContact);
-        assertThat(app.contact().сontactCount(), equalTo( before.size()- 1));
-        Contacts after = app.contact().allc();
+        Contacts after = app.db().contacts();
+        assertThat(after.size(), equalTo(before.size() - 1));
         assertThat(after, equalTo(before.withoutc(deletedContact)));
     }
 
