@@ -71,6 +71,7 @@ public class ContactHelper extends HelperBase {
         acceptAlert();
     }
 
+    //
     public void createContact() {
         gotoAddContact();
         File photo =new File("src/test/resources/sqa.png");

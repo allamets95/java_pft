@@ -84,7 +84,7 @@ public class ContactCreationTests extends TestBase {
     app.goTo().gotoHomePage();
     Groups groups = app.db().groups();
     Contacts before = app.db().contacts();
-    app.contact().createContact(contactData);
+    app.contact().createContact();
     Contacts after = app.db().contacts();
     assertThat(app.contact().сontactCount(), equalTo( before.size()+ 1));
     assertThat(after, equalTo(before.withAddedc(contactData.withId(after.stream().mapToInt((g) -> g.getId()).max().getAsInt()))));
