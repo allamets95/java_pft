@@ -13,7 +13,7 @@ public class ContactEmailTests extends TestBase {
     @BeforeMethod
     public void ensurePreconditions(){
         if (app.contact().allc().size() == 0) {
-            app.contact().createContact(new ContactData().withFirstname("Santa").withLastname("Claus").withCompany("North").withHome("234567").withMobile("020000").withWork("1111111").withEmail("santa@test.com"));
+            app.contact().createContact();
         }
     }
 

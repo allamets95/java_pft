@@ -42,17 +42,3 @@ task testContacts(type: Test) {
         systemProperty 'browser', "${verifyUI}"
     }
 }
-task testVerifyElements(type: Test) {
-    useTestNG {
-        suites 'src/test/resources/testng-verify-contact-elements.xml'
-    }
-    if (project.hasProperty('tatget')) {
-        systemProperty 'target', "${target}"
-    }
-    if (project.hasProperty('browser')) {
-        systemProperty 'browser', "${browser}"
-    }
-    if (project.hasProperty('verifyUI')) {
-        systemProperty 'browser', "${verifyUI}"
-    }
-}

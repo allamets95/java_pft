@@ -4,8 +4,6 @@
     <test name="Groups" >
         <classes>
             <class name="lessons.tests.addressbook.tests.GroupCreationTests" />
-            <class name="lessons.tests.addressbook.tests.GroupModificationTests" />
-            <class name="lessons.tests.addressbook.tests.GroupDeletionTests" />
         </classes>
     </test>
 </suite>

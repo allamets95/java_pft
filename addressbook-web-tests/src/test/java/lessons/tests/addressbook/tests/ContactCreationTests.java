@@ -1,4 +1,3 @@
-
 package lessons.tests.addressbook.tests;
 
 import com.google.gson.Gson;
@@ -6,7 +5,6 @@ import com.google.gson.reflect.TypeToken;
 import com.thoughtworks.xstream.XStream;
 import lessons.tests.addressbook.model.ContactData;
 import lessons.tests.addressbook.model.Contacts;
-import lessons.tests.addressbook.model.Groups;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -80,13 +78,11 @@ public class ContactCreationTests extends TestBase {
   }
 
   @Test(dataProvider = "validContactsFromJson")
-  public void testContactCreation(ContactData contactData)  {
+  public void testContactCreation()  {
     app.goTo().gotoHomePage();
-    Groups groups = app.db().groups();
     Contacts before = app.db().contacts();
     app.contact().createContact();
     Contacts after = app.db().contacts();
     assertThat(app.contact().сontactCount(), equalTo( before.size()+ 1));
-    assertThat(after, equalTo(before.withAddedc(contactData.withId(after.stream().mapToInt((g) -> g.getId()).max().getAsInt()))));
   }
 }

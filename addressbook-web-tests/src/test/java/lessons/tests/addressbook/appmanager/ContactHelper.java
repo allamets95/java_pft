@@ -71,7 +71,6 @@ public class ContactHelper extends HelperBase {
         acceptAlert();
     }
 
-    //
     public void createContact() {
         gotoAddContact();
         File photo =new File("src/test/resources/sqa.png");
@@ -115,7 +114,7 @@ public class ContactHelper extends HelperBase {
     }
 
     public int сontactCount() {
-       return wd.findElements(By.name("selected[]")).size();
+        return wd.findElements(By.name("selected[]")).size();
 
     }
 
@@ -130,7 +129,7 @@ public class ContactHelper extends HelperBase {
             return new Contacts(contactCache);
         }
 
-       contactCache = new Contacts();
+        contactCache = new Contacts();
         List<WebElement> elements = wd.findElements(By.name("entry")); //By.cssSelector("tr")By.name("entry")
         for (WebElement element : elements) {
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
@@ -182,4 +181,3 @@ public class ContactHelper extends HelperBase {
         wd.findElement(By.cssSelector("input[name='remove']")).click();
     }
 }
-
