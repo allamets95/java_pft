@@ -13,7 +13,7 @@ public class ContactModificationTests extends TestBase {
     @BeforeMethod
     public  void ensurePreconditions(){
         if (app.db().contacts().size() == 0) {
-            app.contact().createContact();
+            app.contact().createContact(new ContactData().withFirstname("Alla").withLastname("Add"));
         }
     }
     @Test
