@@ -9,9 +9,9 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-
+import org.openqa.selenium.Platform;
 import java.io.File;
-import java.io.FileNotFoundException;
+import static java.lang.System.getProperty;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
@@ -40,7 +40,7 @@ public class ApplicationManager {
 
     public void init() throws IOException {
 
-        String target = System.getProperty("target", "local");
+        String target = getProperty("target", "local");
         properties.load(new FileReader(new File(String.format("src/test/resources/%s.properties", target))));
         dbhelper = new DbHelper();
         if("".equals(properties.getProperty("selenium.server"))){
@@ -55,7 +55,8 @@ public class ApplicationManager {
         }else{
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setBrowserName(browser);
-            wd = new RemoteWebDriver(new URL(properties.getProperty("selenium.server")), capabilities)
+            capabilities.setPlatform(Platform.fromString(getProperty("platform","win10")));
+            wd = new RemoteWebDriver(new URL(properties.getProperty("selenium.server")), capabilities);
         }
 
 
@@ -66,6 +67,7 @@ public class ApplicationManager {
         contactHelper = new ContactHelper(wd);
         sessionHelper = new SessionHelper(wd);
         sessionHelper.login(properties.getProperty("web.adminLogin"),properties.getProperty("webAdminPassword"));
+        dbhelper = new DbHelper();
 
     }
 
@@ -94,6 +96,5 @@ public class ApplicationManager {
     public void stop() {
         wd.quit();
     }
-
 
 }
