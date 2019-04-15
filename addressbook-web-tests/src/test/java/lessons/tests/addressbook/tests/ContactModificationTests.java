@@ -1,5 +1,5 @@
 package lessons.tests.addressbook.tests;
-
+//доработка
 import lessons.tests.addressbook.model.ContactData;
 import lessons.tests.addressbook.model.Contacts;
 import org.testng.annotations.BeforeMethod;
@@ -22,7 +22,11 @@ public class ContactModificationTests extends TestBase {
         Contacts before = app.db().contacts();
         ContactData modifiedContact = before.iterator().next();
         ContactData contactData = new ContactData().withId(modifiedContact.getId())
+<<<<<<< HEAD
                 .withFirstname("Santa").withLastname("Claus").withCompany("North").withAddress("Cold").withHome("234567").withMobile("020000").withWork("1111111").withEmail("santa@test.com").withEmail2("test@test.com").withEmail3("test@test.com");
+=======
+                .withFirstname("Santa").withLastname("Ivanov").withCompany("North").withAddress("World").withHome("234567").withMobile("020000").withWork("1111111").withEmail("santa@test.com").withEmail2("test@test.com").withEmail3("test@test.com").withGroup("test");
+>>>>>>> Rework15
         app.contact().modifyContact(contactData);
         Contacts after = app.db().contacts();
         assertEquals(after.size(), before.size());

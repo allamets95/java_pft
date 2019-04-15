@@ -10,7 +10,7 @@ import com.thoughtworks.xstream.annotations.XStreamOmitField;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
-
+//доработка
 @XStreamAlias("contact")
 @Entity
 @Table(name = "addressbook")

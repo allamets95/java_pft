@@ -18,7 +18,7 @@ import java.net.URL;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-
+//доработка
 
 public class ApplicationManager {
 
