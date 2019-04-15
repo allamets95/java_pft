@@ -1,5 +1,5 @@
 package lessons.tests.addressbook.model;
-
+//доработка
 import com.google.common.collect.ForwardingSet;
 
 import java.util.Collection;

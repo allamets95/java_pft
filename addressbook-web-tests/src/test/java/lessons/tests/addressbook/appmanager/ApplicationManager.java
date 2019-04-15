@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-
+//доработка
 
 public class ApplicationManager {
 
